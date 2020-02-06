@@ -1,6 +1,3 @@
-deps:
-  toolbox: github.com/aroq/toolbox
-
 from:
 - toolbox/config/toolbox.default.settings.yaml
 
