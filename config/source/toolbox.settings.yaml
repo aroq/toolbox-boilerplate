@@ -2,6 +2,11 @@ from:
 - toolbox/config/toolbox.default.settings.yaml
 
 tools:
+  test:
+    from: config.tools
+    cmd: test
+    run_wrapper_path: toolbox/.toolbox/deps/toolwrap/run
   test_variant:
     from: config.tools
     cmd: test_variant
+
