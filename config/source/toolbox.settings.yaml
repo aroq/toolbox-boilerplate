@@ -1,0 +1,10 @@
+deps:
+  toolbox: github.com/aroq/toolbox
+
+from:
+- toolbox/config/toolbox.default.settings.yaml
+
+tools:
+  test_variant:
+    from: config.tools
+    cmd: test_variant
