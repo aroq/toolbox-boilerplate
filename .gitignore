@@ -1,1 +1,4 @@
 .tmp
+
+.secrets/*
+!.secrets/*.gpg
