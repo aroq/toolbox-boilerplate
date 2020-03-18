@@ -1,0 +1,5 @@
+deps:
+  toolbox-utils: github.com/aroq/toolbox-utils?ref=v0.1.2
+  toolbox-docker: github.com/aroq/toolbox-docker?ref=v0.1.7
+  toolbox-wrap: github.com/aroq/toolbox-wrap?ref=v0.1.16
+  toolbox-variant: github.com/aroq/toolbox-variant?ref=v0.1.21

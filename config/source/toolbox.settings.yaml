@@ -1,12 +1,40 @@
+---
+# IMPORTANT:
+# After editing this file please execute:
+# 'make toolbox/build' to rebuild the config
+
+# 'from' keyword performs deep-merging of listed files into current file.
+# Check 'toolbox/config/rendered/toolbox.settings.yaml' for the rendered config.
 from:
-- toolbox/config/toolbox.default.settings.yaml
+  - toolbox/deps/toolbox-docker/config/toolbox.settings.yaml
+  - toolbox/deps/toolbox-variant/config/toolbox.settings.yaml
 
+# This structure would be merged using 'from' keywords below where referenced.
+config:
+  toolbox-docker:
+    params:
+      entrypoint_override: true
+  toolbox-variant:
+    params:
+      entrypoint_override: true
+
+# 'from' keyword collects and deep-merges 'params' key from corresponding config structure and
+# deep-merges collected config into the current entity.
+# Check 'toolbox/deps/toolbox-docker/config/toolbox.settings.yaml' for 'config.toolbox-docker' settings.
+# Check 'config: toolbox-docker: build: params' above for additional merged settings
 tools:
-  test:
-    from: config.tools
-    cmd: test
-    run_wrapper_path: toolbox/.toolbox/deps/toolwrap/run
-  test_variant:
-    from: config.tools
-    cmd: test_variant
+  docker/sh:
+    from: config.toolbox-docker
 
+  yarn:
+    from: config.toolbox-docker
+
+  gpg:
+    from: config.toolbox-variant
+    image: aroq/toolbox-secrets:0.1.11
+    tool_dirs:
+      - /toolbox/toolbox-secrets
+
+  artifact:
+    from: config.toolbox-variant
+    image: aroq/toolbox-artifact:0.2.5

@@ -1,8 +1,0 @@
-deps:
-  toolwrap: github.com/aroq/toolwrap?ref=v0.1.8
-  toolbox-variant: github.com/aroq/toolbox-variant?ref=v0.1.3
-
-config:
-  tools:
-    params:
-      image: aroq/toolbox
