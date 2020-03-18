@@ -25,9 +25,11 @@ config:
 tools:
   docker/sh:
     from: config.toolbox-docker
+    image: alpine
 
   yarn:
     from: config.toolbox-docker
+    image: node
 
   gpg:
     from: config.toolbox-variant
