@@ -33,10 +33,6 @@ tools:
 
   gpg:
     from: config.toolbox-variant
-    image: aroq/toolbox-secrets:0.1.11
+    image: aroq/toolbox-secrets:0.1.16
     tool_dirs:
       - /toolbox/toolbox-secrets
-
-  artifact:
-    from: config.toolbox-variant
-    image: aroq/toolbox-artifact:0.2.5
