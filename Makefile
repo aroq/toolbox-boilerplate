@@ -1,4 +1,4 @@
-TOOLBOX_IMAGE ?= aroq/toolbox
+TOOLBOX_IMAGE ?= aroq/toolbox:0.3.1
 
 # If the first argument is "toolbox"...
 ifeq (toolbox,$(firstword $(MAKECMDGOALS)))
@@ -10,4 +10,5 @@ endif
 
 .PHONY: toolbox
 toolbox:
-	docker run --rm -it -v "$$(pwd)":"$$(pwd)" -w "$$(pwd)" $(TOOLBOX_IMAGE) $(TOOLBOX_ARGS)
+	docker run --rm -it -v "$$(pwd)":"$$(pwd)" -w "$$(pwd)" $(TOOLBOX_IMAGE) toolbox $(TOOLBOX_ARGS)
+
