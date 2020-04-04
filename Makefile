@@ -12,3 +12,7 @@ endif
 toolbox:
 	docker run --rm -it -v "$$(pwd)":"$$(pwd)" -w "$$(pwd)" $(TOOLBOX_IMAGE) toolbox $(TOOLBOX_ARGS)
 
+.PHONY: build
+build:
+	make toolbox deps install
+	make toolbox process cmd create
